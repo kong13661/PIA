@@ -1,7 +1,6 @@
 # PIA
 Official repo for An Efficient Membership Inference Attack for the Diffusion Model by Proximal Initialization
 
-
 ## Requirements
 
 Follow `gradtts/train/README.md`.
@@ -25,17 +24,22 @@ python attack.py --checkpoint your_checkpoint --dataset your_dataset --attacker_
 ```
 
 The meaning of those parameters:
+
 `--checkpoint` The checkpoint you saved.
+
 `--dataset` The dataset to attack. It can be `cifar10` or `TINY-IN`.
+
 `--attacker_name` The attack method. `naive` for NA in our paper. `SecMI` for SceMI attack. `PIA` for PIA and `PIAN` for PIAN
+
 `--attack_num` attack number from $t=0$
+
 `--interval` attack interval. For example, if `attack_num=5`, `interval=20`,  the attack method will attack \[20, 40, 60, 80, 100\]. 
 
 At last, this program will print AUC and TPR @ 1% FPR in \[20, 40, 60, 80, 100\].
 
 ### apply our method to other model
 
-Inherit a subclass from `components.EpsGetter`, implement `__call__` method, and return predicted $\epsilon$. `noise_level[t]` is $\prod_{k=1}^t (1-\beta_k)$. Keep other same with `attack.py`.
+Inherit a subclass from `components.EpsGetter`, implement `__call__` method, and return predicted $\epsilon$. `noise_level[t]` is $\prod_{k=1}^{t} (1-\beta_k)$. Keep other same with `attack.py`.
 
 ## GradTTS
 ### train GradTTS model
@@ -64,6 +68,7 @@ python attack.py --checkpoint your_checkpoint --dataset your_dataset --attacker_
 ```
 
 The meaning of parameters is same with that in DDPM.
+
 `--dataset` You can use `ljspeech` or `libritts`.
 
 
