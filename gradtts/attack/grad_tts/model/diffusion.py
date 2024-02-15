@@ -409,7 +409,7 @@ class Diffusion(BaseModule):
 
         intermediate_result = []
 
-        i = 0
+        i = 10
         t = ((i + init_point) * h) * torch.ones(x0.shape[0], dtype=x0.dtype,
                                                 device=x0.device)
         time = t.unsqueeze(-1).unsqueeze(-1)
@@ -453,7 +453,7 @@ class Diffusion(BaseModule):
 
         intermediate_result = []
 
-        i = 0
+        i = 10
         t = ((i + init_point) * h) * torch.ones(x0.shape[0], dtype=x0.dtype,
                                                 device=x0.device)
         time = t.unsqueeze(-1).unsqueeze(-1)
