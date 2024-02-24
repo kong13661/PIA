@@ -62,7 +62,7 @@ python train_multi_speaker_libritts.py  # for libritts
 
 Just run command below.
 ```bash
-cd DDPM
+cd stable_diffusion
 python attack.py --checkpoint your_checkpoint --dataset your_dataset --attacker_name attacker_name --attack_num attack_num --interval interval
 ```
 
