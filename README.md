@@ -58,6 +58,30 @@ python train.py   # for ljspeech
 python train_multi_speaker_libritts.py  # for libritts
 ```
 
+### attack Stable Diffusion
+
+Just run command below.
+```bash
+cd DDPM
+python attack.py --checkpoint your_checkpoint --dataset your_dataset --attacker_name attacker_name --attack_num attack_num --interval interval
+```
+
+The meaning of those parameters:
+
+`--checkpoint` The checkpoint you saved.
+
+`--dataset` The dataset to attack. It can be `laion5`, `laion5_none` (no groundtruth text) or `laion5_blip` (blip generated text).
+
+`--attacker_name` The attack method. `naive` for NA in our paper. `SecMI` for SceMI attack. `PIA` for PIA and `PIAN` for PIAN
+
+`--attack_num` attack number from $t=0$
+
+`--interval` attack interval. For example, if `attack_num=5`, `interval=20`,  the attack method will attack \[20, 40, 60, 80, 100\]. 
+
+At last, this program will print AUC and TPR @ 1% FPR in \[20, 40, 60, 80, 100\].
+
+We also provide the images evaluated in our paper. Download from [MIA_efficient](https://1drv.ms/f/s!Aqkz6X6nVZGDiY4TMwyHSP2Ij-rinA?e=BldxvP). If you download the data, you could modify `/home/kongfei/workspace/PIA/stable_diffusion/dataset.py` and set up `coco_dataset_root`, `coco_dataset_anno` and `stable_diffusion_data`. The you also need to download COCO dataset by yourself.
+
 ### attack GradTTS
 
 Change the value of `train_filelist_path`, `valid_filelist_path`  in `gradtts/attack/gradtts/params_ljspeech.py` and `gradtts/attack/gradtts/params_libritts.py` to load dataset.
