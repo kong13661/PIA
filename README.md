@@ -80,6 +80,8 @@ The meaning of those parameters:
 
 At last, this program will print AUC and TPR @ 1% FPR in \[20, 40, 60, 80, 100\].
 
+You to attack stable diffusion, you need to install `diffusers==0.18.0`.
+
 We also provide the images evaluated in our paper. Download from [MIA_efficient](https://1drv.ms/f/s!Aqkz6X6nVZGDiY4TMwyHSP2Ij-rinA?e=BldxvP). If you download the data, you could modify `/home/kongfei/workspace/PIA/stable_diffusion/dataset.py` and set up `coco_dataset_root`, `coco_dataset_anno` and `stable_diffusion_data`. The you also need to download COCO dataset by yourself.
 
 ### attack GradTTS
