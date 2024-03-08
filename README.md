@@ -1,5 +1,5 @@
 # PIA
-Official repo for An Efficient Membership Inference Attack for the Diffusion Model by Proximal Initialization
+Official repo for [An Efficient Membership Inference Attack for the Diffusion Model by Proximal Initialization](https://arxiv.org/pdf/2305.18355.pdf)
 
 ## Requirements
 
@@ -100,3 +100,14 @@ The meaning of parameters is same with that in DDPM.
 
 ## Pretrained Checkpoint
 You can download pretrained checkpoint from [MIA_efficient](https://1drv.ms/f/s!Aqkz6X6nVZGDiY4TMwyHSP2Ij-rinA?e=BldxvP).
+
+## Citation
+
+```
+@article{kong2023efficient,
+  title={An Efficient Membership Inference Attack for the Diffusion Model by Proximal Initialization},
+  author={Kong, Fei and Duan, Jinhao and Ma, RuiPeng and Shen, Hengtao and Zhu, Xiaofeng and Shi, Xiaoshuang and Xu, Kaidi},
+  journal={The International Conference on Learning Representations},
+  year={2024}
+}
+```
